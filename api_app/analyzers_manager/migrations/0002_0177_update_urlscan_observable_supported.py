@@ -26,7 +26,7 @@ def reverse_migrate(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("analyzers_manager", "0002_0146_analyzer_config_zoomeye"),
+        ("analyzers_manager", "0176_analyzer_config_macho_info"),
     ]
 
     operations = [migrations.RunPython(migrate, reverse_migrate)]

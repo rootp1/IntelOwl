@@ -42,7 +42,7 @@ def unlink_visualizer(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("playbooks_manager", "0060_playbook_config_url_infrastructure_scan"),
+        ("playbooks_manager", "0065_playbook_config_url_infrastructure_scan"),
         ("visualizers_manager", "0041_visualizer_config_crawl_results"),
     ]
 
