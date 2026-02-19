@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ("api_app", "0001_2_initial_squashed"),
         ("playbooks_manager", "0064_add_machoinfo_to_sample_static_analysis"),
-        ("analyzers_manager", "0002_0177_update_urlscan_observable_supported"),
+        ("analyzers_manager", "0177_update_urlscan_observable_supported"),
     ]
 
     operations = [migrations.RunPython(migrate, reverse_migrate)]
