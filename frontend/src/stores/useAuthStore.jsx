@@ -7,13 +7,13 @@ import Cookies from "js-cookie";
 import { USERACCESS_URI, AUTH_BASE_URI } from "../constants/apiURLs";
 
 // constants
-const CSRF_TOKEN = "csrftoken";
+export const CSRF_TOKEN = "csrftoken";
 
 // hook/ store see: https://github.com/pmndrs/zustand
 export const useAuthStore = create((set, get) => ({
   loading: false,
 
-  CSRFToken: Cookies.get(CSRF_TOKEN) || "",
+  CSRFToken: "",
   user: {
     username: "",
     full_name: "",
@@ -32,6 +32,7 @@ export const useAuthStore = create((set, get) => ({
         const resp = await axios.get(USERACCESS_URI, {
           certegoUIenableProgressBar: false,
         });
+        get().updateToken();
         set({
           user: resp.data.user,
           access: resp.data.access,
